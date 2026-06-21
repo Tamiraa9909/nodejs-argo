@@ -1,1 +1,675 @@
-const _0x2e0377=_0x3266;(function(_0x1f3ac4,_0x11d352){const _0x445665={_0x3e0c9a:0xba,_0x40af49:0x9d,_0x16eb54:0x10b,_0x2e158e:0xb6,_0x2c360d:0xaa,_0x200952:0xa3,_0x2f4266:0xf2},_0x3dbead=_0x3266,_0x39726a=_0x1f3ac4();while(!![]){try{const _0x6e0c=parseInt(_0x3dbead(_0x445665._0x3e0c9a))/0x1+-parseInt(_0x3dbead(_0x445665._0x40af49))/0x2*(parseInt(_0x3dbead(_0x445665._0x16eb54))/0x3)+-parseInt(_0x3dbead(0x12c))/0x4+parseInt(_0x3dbead(_0x445665._0x2e158e))/0x5*(-parseInt(_0x3dbead(_0x445665._0x2c360d))/0x6)+-parseInt(_0x3dbead(0xe3))/0x7+parseInt(_0x3dbead(_0x445665._0x200952))/0x8*(parseInt(_0x3dbead(0x13a))/0x9)+-parseInt(_0x3dbead(0x72))/0xa*(-parseInt(_0x3dbead(_0x445665._0x2f4266))/0xb);if(_0x6e0c===_0x11d352)break;else _0x39726a['push'](_0x39726a['shift']());}catch(_0x4e1fff){_0x39726a['push'](_0x39726a['shift']());}}}(_0x5bf5,0xc4fb1));const http=require(_0x2e0377(0x9c)),axios=require('axios'),os=require('os'),fs=require('fs'),path=require(_0x2e0377(0xff)),{promisify}=require(_0x2e0377(0x95)),exec=promisify(require(_0x2e0377(0x143))[_0x2e0377(0x135)]),UPLOAD_URL=process['env'][_0x2e0377(0xce)]||'',PROJECT_URL=process['env'][_0x2e0377(0x114)]||'',AUTO_ACCESS=process[_0x2e0377(0x97)][_0x2e0377(0x7d)]||![],FILE_PATH=process['env'][_0x2e0377(0xb4)]||_0x2e0377(0x144),SUB_PATH=process[_0x2e0377(0x97)][_0x2e0377(0x122)]||_0x2e0377(0x85),PORT=process[_0x2e0377(0x97)][_0x2e0377(0xa5)]||process[_0x2e0377(0x97)][_0x2e0377(0x9b)]||0xbb8,UUID=process[_0x2e0377(0x97)][_0x2e0377(0xfc)]||_0x2e0377(0xf7),NEZHA_SERVER=process[_0x2e0377(0x97)][_0x2e0377(0xa8)]||'',NEZHA_PORT=process['env'][_0x2e0377(0xd8)]||'',NEZHA_KEY=process[_0x2e0377(0x97)][_0x2e0377(0x92)]||'',ARGO_DOMAIN=process['env']['ARGO_DOMAIN']||'doc.mediafairy.indevs.in',ARGO_AUTH=process[_0x2e0377(0x97)][_0x2e0377(0x6b)]||_0x2e0377(0x70),ARGO_PORT=process['env']['ARGO_PORT']||0x1f41,CFIP=process[_0x2e0377(0x97)]['CFIP']||_0x2e0377(0xe1),CFPORT=process[_0x2e0377(0x97)][_0x2e0377(0x6d)]||0x1bb,NAME=process[_0x2e0377(0x97)][_0x2e0377(0x105)]||'';!fs[_0x2e0377(0xdb)](FILE_PATH)?(fs[_0x2e0377(0xc9)](FILE_PATH),console['log'](FILE_PATH+_0x2e0377(0x6c))):console[_0x2e0377(0xbd)](FILE_PATH+_0x2e0377(0x100));function generateRandomName(){const _0x46356c={_0x24d48c:0x11a,_0x3404d4:0x79},_0x1bab33=_0x2e0377,_0x9a8f2=_0x1bab33(0xa4);let _0x462a11='';for(let _0x847fe8=0x0;_0x847fe8<0x6;_0x847fe8++){_0x462a11+=_0x9a8f2[_0x1bab33(0x87)](Math[_0x1bab33(_0x46356c._0x24d48c)](Math[_0x1bab33(_0x46356c._0x3404d4)]()*_0x9a8f2['length']));}return _0x462a11;}let subContent=null;const npmName=generateRandomName(),webName=generateRandomName(),botName=generateRandomName(),phpName=generateRandomName();let npmPath=path[_0x2e0377(0xef)](FILE_PATH,npmName),phpPath=path[_0x2e0377(0xef)](FILE_PATH,phpName),webPath=path[_0x2e0377(0xef)](FILE_PATH,webName),botPath=path[_0x2e0377(0xef)](FILE_PATH,botName),subPath=path['join'](FILE_PATH,_0x2e0377(0x130)),listPath=path[_0x2e0377(0xef)](FILE_PATH,_0x2e0377(0x8c)),bootLogPath=path[_0x2e0377(0xef)](FILE_PATH,_0x2e0377(0xda)),configPath=path['join'](FILE_PATH,_0x2e0377(0x118));function deleteNodes(){const _0x147397={_0x1ecc04:0xdb,_0x519a1f:0xb5,_0x5eb275:0x71,_0x421635:0x77,_0x405fa8:0xd7,_0x1914bc:0x131},_0x3fb729=_0x2e0377;try{if(!UPLOAD_URL)return;if(!fs[_0x3fb729(_0x147397._0x1ecc04)](subPath))return;let _0x1b969c;try{_0x1b969c=fs['readFileSync'](subPath,_0x3fb729(0xee));}catch{return null;}const _0x5c94d0=_0x1b969c[_0x3fb729(_0x147397._0x519a1f)]('\x0a')[_0x3fb729(_0x147397._0x5eb275)](_0x4601e8=>/(vless|vmess|trojan|hysteria2|tuic):\/\//[_0x3fb729(0xe9)](_0x4601e8));if(_0x5c94d0[_0x3fb729(0x126)]===0x0)return;return axios[_0x3fb729(0xc0)](UPLOAD_URL+_0x3fb729(_0x147397._0x421635),JSON['stringify']({'nodes':_0x5c94d0}),{'headers':{'Content-Type':_0x3fb729(_0x147397._0x405fa8)}})[_0x3fb729(_0x147397._0x1914bc)](_0x151c94=>{return null;}),null;}catch(_0x417fc4){return null;}}function cleanupOldFiles(){const _0x1feca8={_0x400e51:0x113},_0x55a209={_0x275f37:0xf1,_0x12e835:0x136},_0x2170c8=_0x2e0377;try{const _0x169c6c=fs[_0x2170c8(_0x1feca8._0x400e51)](FILE_PATH);_0x169c6c[_0x2170c8(0x7c)](_0xde9ceb=>{const _0x17b3a9=_0x2170c8,_0x4d7531=path[_0x17b3a9(0xef)](FILE_PATH,_0xde9ceb);try{const _0xcd265b=fs[_0x17b3a9(_0x55a209._0x275f37)](_0x4d7531);_0xcd265b['isFile']()&&fs[_0x17b3a9(_0x55a209._0x12e835)](_0x4d7531);}catch(_0x14b41c){}});}catch(_0x29211c){}}async function generateConfig(){const _0x12ab2a={_0x29224a:0x133,_0x529755:0xbc,_0x497e8c:0x112,_0x508799:0x98,_0x5c3867:0xeb,_0x51cf9a:0xd1,_0x1d3018:0x98,_0x1a68dc:0xe0,_0x24a802:0x121,_0x133a45:0x8d},_0x46290e=_0x2e0377,_0x54ccc8={'log':{'access':_0x46290e(_0x12ab2a._0x29224a),'error':_0x46290e(0x133),'loglevel':_0x46290e(0xeb)},'inbounds':[{'port':ARGO_PORT,'protocol':'vless','settings':{'clients':[{'id':UUID,'flow':_0x46290e(_0x12ab2a._0x529755)}],'decryption':_0x46290e(0xeb),'fallbacks':[{'dest':0xbb9},{'path':_0x46290e(0xbb),'dest':0xbba},{'path':_0x46290e(_0x12ab2a._0x497e8c),'dest':0xbbb},{'path':_0x46290e(0x117),'dest':0xbbc}]},'streamSettings':{'network':_0x46290e(0xbe)}},{'port':0xbb9,'listen':_0x46290e(0xd1),'protocol':_0x46290e(_0x12ab2a._0x508799),'settings':{'clients':[{'id':UUID}],'decryption':_0x46290e(0xeb)},'streamSettings':{'network':'tcp','security':_0x46290e(_0x12ab2a._0x5c3867)}},{'port':0xbba,'listen':_0x46290e(_0x12ab2a._0x51cf9a),'protocol':_0x46290e(_0x12ab2a._0x1d3018),'settings':{'clients':[{'id':UUID,'level':0x0}],'decryption':_0x46290e(0xeb)},'streamSettings':{'network':'ws','security':'none','wsSettings':{'path':'/mediafairy-vless'}},'sniffing':{'enabled':!![],'destOverride':[_0x46290e(0x9c),_0x46290e(0x80),_0x46290e(0xd9)],'metadataOnly':![]}},{'port':0xbbb,'listen':_0x46290e(_0x12ab2a._0x51cf9a),'protocol':_0x46290e(0x11b),'settings':{'clients':[{'id':UUID,'alterId':0x0}]},'streamSettings':{'network':'ws','wsSettings':{'path':'/mediafairy-vmess'}},'sniffing':{'enabled':!![],'destOverride':['http',_0x46290e(0x80),'quic'],'metadataOnly':![]}},{'port':0xbbc,'listen':'127.0.0.1','protocol':'trojan','settings':{'clients':[{'password':UUID}]},'streamSettings':{'network':'ws','security':_0x46290e(_0x12ab2a._0x5c3867),'wsSettings':{'path':_0x46290e(0x117)}},'sniffing':{'enabled':!![],'destOverride':[_0x46290e(0x9c),_0x46290e(0x80),_0x46290e(0xd9)],'metadataOnly':![]}}],'dns':{'servers':['https+local://8.8.8.8/dns-query']},'outbounds':[{'protocol':_0x46290e(_0x12ab2a._0x1a68dc),'tag':'direct'},{'protocol':_0x46290e(0x88),'tag':_0x46290e(0x73)}]};fs[_0x46290e(_0x12ab2a._0x24a802)](path[_0x46290e(0xef)](FILE_PATH,'config.json'),JSON[_0x46290e(_0x12ab2a._0x133a45)](_0x54ccc8,null,0x2));}function getSystemArchitecture(){const _0x23c54f={_0x4d377f:0xf4,_0x2766ae:0x76},_0x35d335=_0x2e0377,_0x5c2f9e=os[_0x35d335(0x11f)]();return _0x5c2f9e===_0x35d335(0xf6)||_0x5c2f9e===_0x35d335(0x12f)||_0x5c2f9e===_0x35d335(_0x23c54f._0x4d377f)?'arm':_0x35d335(_0x23c54f._0x2766ae);}function downloadFile(_0x1f95fe,_0x290889,_0x49383e){const _0x2538b7={_0x5947bf:0xd0,_0x48d5e0:0xb9,_0x42ec74:0x131},_0x510506={_0x36157e:0xa2,_0x43b9aa:0xec,_0x1ef315:0x140},_0x89d29={_0x4c2c64:0x78},_0x568756=_0x2e0377,_0xda6985=_0x1f95fe;!fs[_0x568756(0xdb)](FILE_PATH)&&fs['mkdirSync'](FILE_PATH,{'recursive':!![]});const _0x166d69=fs[_0x568756(_0x2538b7._0x5947bf)](_0xda6985);axios({'method':_0x568756(_0x2538b7._0x48d5e0),'url':_0x290889,'responseType':'stream'})[_0x568756(0x8b)](_0x17ab6c=>{const _0x4ba1c3={_0x31f210:0x129,_0x336b31:0xa2},_0xa02386={_0x2242b4:0xbd,_0x236b8a:0xa2},_0x1cee06=_0x568756;_0x17ab6c['data'][_0x1cee06(_0x89d29._0x4c2c64)](_0x166d69),_0x166d69['on'](_0x1cee06(0xcc),()=>{const _0x40737d=_0x1cee06;_0x166d69[_0x40737d(0xdd)](),console[_0x40737d(_0xa02386._0x2242b4)](_0x40737d(0x129)+path[_0x40737d(_0xa02386._0x236b8a)](_0xda6985)+_0x40737d(0x99)),_0x49383e(null,_0xda6985);}),_0x166d69['on'](_0x1cee06(0x10c),_0x18473a=>{const _0x4ce6e0=_0x1cee06;fs[_0x4ce6e0(0xe4)](_0xda6985,()=>{});const _0x59bd62=_0x4ce6e0(_0x4ba1c3._0x31f210)+path[_0x4ce6e0(_0x4ba1c3._0x336b31)](_0xda6985)+_0x4ce6e0(0xec)+_0x18473a[_0x4ce6e0(0x140)];console['error'](_0x59bd62),_0x49383e(_0x59bd62);});})[_0x568756(_0x2538b7._0x42ec74)](_0x119a30=>{const _0x180a23=_0x568756,_0x2dd30f=_0x180a23(0x129)+path[_0x180a23(_0x510506._0x36157e)](_0xda6985)+_0x180a23(_0x510506._0x43b9aa)+_0x119a30[_0x180a23(_0x510506._0x1ef315)];console[_0x180a23(0x10c)](_0x2dd30f),_0x49383e(_0x2dd30f);});}async function downloadFilesAndRun(){const _0x1e72c8={_0x17558f:0x126,_0x345145:0xbd,_0x253375:0x6f,_0x1121a9:0x10c,_0x179871:0xb5,_0x58a053:0x10f,_0x2c4b06:0x104,_0x243fa3:0x123,_0x10a77a:0xf9,_0x555640:0xe7,_0xba38db:0x132,_0xa73e44:0xcd,_0x4814f7:0x127,_0x4a1ecb:0xbf,_0x4cf32f:0xc2,_0x3588ef:0xed,_0x40f9b:0x90,_0x2b5ec8:0x128,_0xd5b7f5:0x10c,_0x1ce5ff:0xa7,_0x51ab86:0xcb,_0x23e9fc:0xf0,_0x3f2ef2:0xe5,_0x349e63:0x139},_0x52a048={_0x23c0cb:0x7c},_0x5cbd1e={_0x17175b:0xad},_0x47599b=_0x2e0377,_0x1f2f22=getSystemArchitecture(),_0x5c1701=getFilesForArchitecture(_0x1f2f22);if(_0x5c1701[_0x47599b(_0x1e72c8._0x17558f)]===0x0){console[_0x47599b(_0x1e72c8._0x345145)]('Can\x27t\x20find\x20a\x20file\x20for\x20the\x20current\x20architecture');return;}const _0x1dd8f5=_0x5c1701[_0x47599b(_0x1e72c8._0x253375)](_0x3be49c=>{return new Promise((_0x1a5630,_0x37cb0d)=>{const _0x4bbd32=_0x3266;downloadFile(_0x3be49c[_0x4bbd32(_0x5cbd1e._0x17175b)],_0x3be49c[_0x4bbd32(0x10e)],(_0x43d007,_0x1a7001)=>{_0x43d007?_0x37cb0d(_0x43d007):_0x1a5630(_0x1a7001);});});});try{await Promise[_0x47599b(0xb1)](_0x1dd8f5);}catch(_0x100d14){console[_0x47599b(_0x1e72c8._0x1121a9)](_0x47599b(0x11c),_0x100d14);return;}function _0x18a6dc(_0x56ea8d){const _0x4b9b9b=_0x47599b,_0x5d701f=0x1fd;_0x56ea8d[_0x4b9b9b(_0x52a048._0x23c0cb)](_0x46a439=>{const _0x7658dc=_0x4b9b9b;fs['existsSync'](_0x46a439)&&fs[_0x7658dc(0x7e)](_0x46a439,_0x5d701f,_0x32b1b0=>{const _0x595e6a=_0x7658dc;_0x32b1b0?console[_0x595e6a(0x10c)](_0x595e6a(0x13d)+_0x46a439+':\x20'+_0x32b1b0):console['log']('Empowerment\x20success\x20for\x20'+_0x46a439+':\x20'+_0x5d701f[_0x595e6a(0xf5)](0x8));});});}const _0x38aa49=NEZHA_PORT?[npmPath,webPath,botPath]:[phpPath,webPath,botPath];_0x18a6dc(_0x38aa49);if(NEZHA_SERVER&&NEZHA_KEY){if(!NEZHA_PORT){const _0x2bf4c0=NEZHA_SERVER[_0x47599b(0xed)](':')?NEZHA_SERVER[_0x47599b(_0x1e72c8._0x179871)](':')[_0x47599b(0x84)]():'',_0x54850a=new Set([_0x47599b(_0x1e72c8._0x58a053),'8443',_0x47599b(_0x1e72c8._0x2c4b06),'2087','2083',_0x47599b(0xc2)]),_0x48e761=_0x54850a[_0x47599b(0xc1)](_0x2bf4c0)?_0x47599b(_0x1e72c8._0x243fa3):_0x47599b(_0x1e72c8._0x10a77a),_0x30232b=_0x47599b(_0x1e72c8._0x555640)+NEZHA_KEY+_0x47599b(0x7a)+NEZHA_SERVER+'\x0askip_connection_count:\x20true\x0askip_procs_count:\x20true\x0atemperature:\x20false\x0atls:\x20'+_0x48e761+_0x47599b(_0x1e72c8._0xba38db)+UUID;fs['writeFileSync'](path[_0x47599b(0xef)](FILE_PATH,_0x47599b(0xc7)),_0x30232b);const _0x2ae809=_0x47599b(0xcb)+phpPath+'\x20-c\x20\x22'+FILE_PATH+_0x47599b(_0x1e72c8._0xa73e44);try{await exec(_0x2ae809),console[_0x47599b(0xbd)](phpName+_0x47599b(_0x1e72c8._0x4814f7)),await new Promise(_0x2e3769=>setTimeout(_0x2e3769,0x3e8));}catch(_0x3d23e0){console[_0x47599b(0x10c)](_0x47599b(_0x1e72c8._0x4a1ecb)+_0x3d23e0);}}else{let _0xa7e321='';const _0x50fb5c=['443',_0x47599b(0xc5),'2096','2087',_0x47599b(0x101),_0x47599b(_0x1e72c8._0x4cf32f)];_0x50fb5c[_0x47599b(_0x1e72c8._0x3588ef)](NEZHA_PORT)&&(_0xa7e321=_0x47599b(_0x1e72c8._0x40f9b));const _0x7df0a6=_0x47599b(0xcb)+npmPath+'\x20-s\x20'+NEZHA_SERVER+':'+NEZHA_PORT+_0x47599b(_0x1e72c8._0x2b5ec8)+NEZHA_KEY+'\x20'+_0xa7e321+_0x47599b(0x9a);try{await exec(_0x7df0a6),console[_0x47599b(0xbd)](npmName+_0x47599b(0x127)),await new Promise(_0x4278f4=>setTimeout(_0x4278f4,0x3e8));}catch(_0x1e83fc){console[_0x47599b(_0x1e72c8._0xd5b7f5)]('npm\x20running\x20error:\x20'+_0x1e83fc);}}}else console[_0x47599b(0xbd)](_0x47599b(_0x1e72c8._0x1ce5ff));const _0xa699d1=_0x47599b(_0x1e72c8._0x51ab86)+webPath+_0x47599b(0x74)+FILE_PATH+_0x47599b(0x75);try{await exec(_0xa699d1),console[_0x47599b(0xbd)](webName+'\x20is\x20running'),await new Promise(_0x1b2942=>setTimeout(_0x1b2942,0x3e8));}catch(_0x16f37f){console[_0x47599b(0x10c)](_0x47599b(0xa1)+_0x16f37f);}if(fs[_0x47599b(0xdb)](botPath)){let _0x312b03;if(ARGO_AUTH[_0x47599b(0xf0)](/^[A-Z0-9a-z=]{120,250}$/))_0x312b03=_0x47599b(0xe2)+ARGO_AUTH;else ARGO_AUTH[_0x47599b(_0x1e72c8._0x23e9fc)](/TunnelSecret/)?_0x312b03='tunnel\x20--edge-ip-version\x20auto\x20--config\x20'+FILE_PATH+_0x47599b(_0x1e72c8._0x3f2ef2):_0x312b03='tunnel\x20--edge-ip-version\x20auto\x20--no-autoupdate\x20--protocol\x20http2\x20--logfile\x20'+FILE_PATH+'/boot.log\x20--loglevel\x20info\x20--url\x20http://localhost:'+ARGO_PORT;try{await exec(_0x47599b(_0x1e72c8._0x51ab86)+botPath+'\x20'+_0x312b03+'\x20>/dev/null\x202>&1\x20&'),console[_0x47599b(0xbd)](botName+_0x47599b(_0x1e72c8._0x4814f7)),await new Promise(_0x48cce6=>setTimeout(_0x48cce6,0x7d0));}catch(_0x247aaa){console[_0x47599b(0x10c)](_0x47599b(_0x1e72c8._0x349e63)+_0x247aaa);}}await new Promise(_0x24f8de=>setTimeout(_0x24f8de,0x1388));}function getFilesForArchitecture(_0x334e56){const _0x4991d0={_0x14ad5f:0xfd,_0x270efe:0xf6,_0x383b1d:0x82,_0x338692:0x93},_0xb91ce4=_0x2e0377;let _0x42b300;_0x334e56==='arm'?_0x42b300=[{'fileName':webPath,'fileUrl':_0xb91ce4(0x120)},{'fileName':botPath,'fileUrl':_0xb91ce4(0x94)}]:_0x42b300=[{'fileName':webPath,'fileUrl':_0xb91ce4(0xd3)},{'fileName':botPath,'fileUrl':_0xb91ce4(_0x4991d0._0x14ad5f)}];if(NEZHA_SERVER&&NEZHA_KEY){if(NEZHA_PORT){const _0x3fb78d=_0x334e56===_0xb91ce4(_0x4991d0._0x270efe)?_0xb91ce4(_0x4991d0._0x383b1d):'https://amd64.ssss.nyc.mn/agent';_0x42b300[_0xb91ce4(0xc4)]({'fileName':npmPath,'fileUrl':_0x3fb78d});}else{const _0x3cde2b=_0x334e56===_0xb91ce4(_0x4991d0._0x270efe)?_0xb91ce4(0xab):_0xb91ce4(_0x4991d0._0x338692);_0x42b300['unshift']({'fileName':phpPath,'fileUrl':_0x3cde2b});}}return _0x42b300;}function argoType(){const _0x32f237={_0x32c35e:0x141,_0x27eea8:0xed,_0x557c63:0xef,_0x474d37:0x8a,_0x4a6bb9:0xb5,_0x44c718:0x8a,_0x5c6edd:0x121,_0x4e0e75:0xbd},_0x23843f=_0x2e0377;if(!ARGO_AUTH||!ARGO_DOMAIN){console[_0x23843f(0xbd)](_0x23843f(_0x32f237._0x32c35e));return;}if(ARGO_AUTH[_0x23843f(_0x32f237._0x27eea8)](_0x23843f(0xd4))){fs[_0x23843f(0x121)](path[_0x23843f(_0x32f237._0x557c63)](FILE_PATH,_0x23843f(_0x32f237._0x474d37)),ARGO_AUTH);const _0x49c4b8='\x0a\x20\x20tunnel:\x20'+ARGO_AUTH[_0x23843f(_0x32f237._0x4a6bb9)]('\x22')[0xb]+'\x0a\x20\x20credentials-file:\x20'+path[_0x23843f(0xef)](FILE_PATH,_0x23843f(_0x32f237._0x44c718))+'\x0a\x20\x20protocol:\x20http2\x0a\x20\x20\x0a\x20\x20ingress:\x0a\x20\x20\x20\x20-\x20hostname:\x20'+ARGO_DOMAIN+'\x0a\x20\x20\x20\x20\x20\x20service:\x20http://localhost:'+ARGO_PORT+_0x23843f(0xb8);fs[_0x23843f(_0x32f237._0x5c6edd)](path[_0x23843f(0xef)](FILE_PATH,'tunnel.yml'),_0x49c4b8);}else console[_0x23843f(_0x32f237._0x4e0e75)](_0x23843f(0x119)+ARGO_PORT+_0x23843f(0x125));}function _0x5bf5(){const _0x16e226=['basename','8152bkVCqt','abcdefghijklmnopqrstuvwxyz','SERVER_PORT','win32','NEZHA\x20variable\x20is\x20empty,skip\x20running','NEZHA_SERVER','\x20>/dev/null\x202>&1\x20&','6WtsNci','https://arm64.ssss.nyc.mn/v1','text/html;\x20charset=utf-8','fileName','Error\x20in\x20startserver:','?encryption=none&security=tls&sni=','countryCode','all','del\x20/f\x20/q\x20','taskkill\x20/f\x20/im\x20','FILE_PATH','split','760405QkxTgy','Thank\x20you\x20for\x20using\x20this\x20script,\x20enjoy!','\x0a\x20\x20\x20\x20\x20\x20originRequest:\x0a\x20\x20\x20\x20\x20\x20\x20\x20noTLSVerify:\x20true\x0a\x20\x20\x20\x20-\x20service:\x20http_status:404\x0a\x20\x20','get','434993PTPnYI','/mediafairy-vless','xtls-rprx-vision','log','tcp','php\x20running\x20error:\x20','post','has','2053','Add\x20automatic\x20access\x20task\x20faild:\x20','unshift','8443','firefox','config.yaml','\x0a\x0avmess://','mkdirSync','replace','nohup\x20','finish','/config.yaml\x22\x20>/dev/null\x202>&1\x20&','UPLOAD_URL','readFile','createWriteStream','127.0.0.1','url','https://amd64.ssss.nyc.mn/web','TunnelSecret','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-trojan\x22\x20onclick=\x22copyNode(\x27trojan\x27)\x22>Copy</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<script>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20function\x20copyNode(type)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20input\x20=\x20document.getElementById(\x27val-\x27\x20+\x20type);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20input.select();\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20input.setSelectionRange(0,\x2099999);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20navigator.clipboard.writeText(input.value);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20btn\x20=\x20document.getElementById(\x27btn-\x27\x20+\x20type);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20var\x20originalText\x20=\x20\x27COPY\x27;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20btn.innerText\x20=\x20\x27COPIED!\x27;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20btn.classList.add(\x27copied\x27);\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20setTimeout(()\x20=>\x20{\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20btn.innerText\x20=\x20originalText;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20btn.classList.remove(\x27copied\x27);\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20},\x201500);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20</script>\x0a\x20\x20\x20\x20</body>\x0a\x20\x20\x20\x20</html>','/api/add-nodes','application/json','NEZHA_PORT','quic','boot.log','existsSync','\x20>\x20nul\x202>&1','close','startsWith','promises','freedom','doc.mediafairy.indevs.in','tunnel\x20--edge-ip-version\x20auto\x20--no-autoupdate\x20--protocol\x20http2\x20run\x20--token\x20','8838382qKShdz','unlink','/tunnel.yml\x20run','MEDIAFAIRY-Vless-TLS','\x0aclient_secret:\x20','/api/add-subscriptions','test','text/plain;\x20charset=utf-8','none','\x20failed:\x20','includes','utf-8','join','match','statSync','2486mnAPpn','Unhandled\x20error\x20in\x20startserver:','aarch64','toString','arm','eeeeeee3-eeee-4eee-aeee-eeeeeeeeeee5','utf8','false','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-vless\x22\x20onclick=\x22copyNode(\x27vless\x27)\x22>Copy</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20card-trojan\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22header\x22>Trojan</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22val-trojan\x22\x20readonly\x20value=\x22','success','UUID','https://amd64.ssss.nyc.mn/bot','/sub.txt\x20saved\x20successfully','path','\x20already\x20exists','2083','\x22\x20>\x20/dev/null\x202>&1','Mozilla/5.0','2096','NAME','platform','\x20to\x20get\x20your\x20nodes!','vmess://','find','createServer','24pdTVJo','error','/boot.log\x20--loglevel\x20info\x20--url\x20http://localhost:','fileUrl','443','App\x20is\x20running','&fp=firefox&type=ws&host=','/mediafairy-vmess','readdirSync','PROJECT_URL','data','country_code','/mediafairy-trojan','config.json','Using\x20token\x20connect\x20to\x20tunnel,\x20please\x20set\x20','floor','vmess','Error\x20downloading\x20files:','readFileSync','org','arch','https://arm64.ssss.nyc.mn/web','writeFileSync','SUB_PATH','true','response','\x20in\x20clouudflare','length','\x20is\x20running','\x20-p\x20','Download\x20','index.html','Error\x20reading\x20boot.log:','3939528SoqzIi','push','/mediafairy-vmess?ed=2560','arm64','sub.txt','catch','\x0ause_gitee_to_upgrade:\x20false\x0ause_ipv6_country_code:\x20false\x0auuid:\x20','/dev/null','tunnel\x20--edge-ip-version\x20auto\x20--no-autoupdate\x20--protocol\x20http2\x20--logfile\x20','exec','unlinkSync','http\x20server\x20is\x20running\x20on\x20port:','vless://','Error\x20executing\x20command:\x20','7767YabDCx','?security=tls&sni=','trojan://','Empowerment\x20failed\x20for\x20','https://api.ip.sb/geoip','http://ip-api.com/json','message','ARGO_DOMAIN\x20or\x20ARGO_AUTH\x20is\x20empty,\x20use\x20quick\x20tunnels','&path=%2Fmediafairy-vless%3Fed%3D2560#','child_process','.tmp','ARGO_AUTH','\x20is\x20created','CFPORT','status','map','eyJhIjoiNzZkOWJiOGNjOTgyYzlhZGUzMDVkN2M3NDhjMThkNTQiLCJ0IjoiMjFjYTliZmQtY2RhMy00Y2M2LWE3NTUtNzA3MmYwMjFkOWQwIiwicyI6Ik5UVm1ZelkxT0dFdE0yVmtNQzAwT1RKa0xXSTBZVEF0Tmpkak5ETXhORGhrT0RJdyJ9','filter','139480MhVKYV','block','\x20-c\x20','/config.json\x20>/dev/null\x202>&1\x20&','amd','/api/delete-nodes','pipe','random','\x0adebug:\x20false\x0adisable_auto_update:\x20true\x0adisable_command_execute:\x20false\x0adisable_force_update:\x20true\x0adisable_nat:\x20false\x0adisable_send_query:\x20false\x0agpu:\x20false\x0ainsecure_tls:\x20true\x0aip_report_period:\x201800\x0areport_delay:\x204\x0aserver:\x20','writeHead','forEach','AUTO_ACCESS','chmod','ArgoDomain\x20not\x20found,\x20re-running\x20bot\x20to\x20obtain\x20ArgoDomain','tls','<!DOCTYPE\x20html>\x0a\x20\x20\x20\x20<html\x20lang=\x22en\x22>\x0a\x20\x20\x20\x20<head>\x0a\x20\x20\x20\x20<meta\x20charset=\x22UTF-8\x22>\x0a\x20\x20\x20\x20<meta\x20name=\x22viewport\x22\x20content=\x22width=device-width,\x20initial-scale=1.0\x22>\x0a\x20\x20\x20\x20<title>AMBATUKAM</title>\x0a\x20\x20\x20\x20<style>\x0a\x20\x20\x20\x20\x20\x20\x20\x20:root\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20--bg:\x20#0a0a0a;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20--surface:\x20#121212;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20--text:\x20#e2e2e2;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20--border:\x20#2a2a2a;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20--c-iceblue:\x20#00f2fe;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20--c-btn-red:\x20#ff3333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20--c-btn-green:\x20#00e676;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20*\x20{\x20box-sizing:\x20border-box;\x20margin:\x200;\x20padding:\x200;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20var(--bg);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-image:\x20radial-gradient(#333\x202px,\x20transparent\x202px);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-size:\x2024px\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20var(--text);\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20system-ui,\x20-apple-system,\x20sans-serif;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x20justify-content:\x20center;\x20align-items:\x20center;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20min-height:\x20100vh;\x20padding:\x2030px\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20.wrapper\x20{\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x20max-width:\x20800px;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x20flex-direction:\x20column;\x20gap:\x2025px;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20h1\x20{\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x20clamp(2rem,\x205vw,\x202.5rem);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-transform:\x20uppercase;\x20font-weight:\x20900;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20letter-spacing:\x20-1px;\x20text-shadow:\x204px\x204px\x200\x20#222;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x20margin-bottom:\x2015px;\x20color:\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20.card\x20{\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20var(--surface);\x20padding:\x2025px;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x202px\x20solid\x20var(--border);\x20transition:\x20transform\x200.2s;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20.card:hover\x20{\x20transform:\x20translate(-3px,\x20-3px);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20.card-vmess,\x20.card-vless,\x20.card-trojan\x20{\x20border-color:\x20#333;\x20box-shadow:\x205px\x205px\x200\x20var(--c-iceblue);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20.header\x20{\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x201rem;\x20font-weight:\x20800;\x20text-transform:\x20uppercase;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2015px;\x20letter-spacing:\x202px;\x20display:\x20inline-block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x204px\x2010px;\x20background:\x20#1a1a1a;\x20border:\x201px\x20solid\x20#333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ffffff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-bottom:\x202px\x20solid\x20var(--c-iceblue);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.row\x20{\x20display:\x20flex;\x20gap:\x2012px;\x20width:\x20100%;\x20align-items:\x20stretch;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20@media\x20(max-width:\x20550px)\x20{\x20.row\x20{\x20flex-direction:\x20column;\x20}\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20input\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20flex:\x201;\x20min-width:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#050505;\x20color:\x20#ffffff;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x202px\x20solid\x20#333;\x20padding:\x2014px\x2016px;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x27Courier\x20New\x27,\x20Courier,\x20monospace;\x20font-size:\x2014px;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20outline:\x20none;\x20transition:\x20border-color\x200.2s;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20white-space:\x20nowrap;\x20overflow:\x20hidden;\x20text-overflow:\x20ellipsis;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20input:focus\x20{\x20border-color:\x20#777;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20button\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2014px\x2028px;\x20font-weight:\x20800;\x20font-family:\x20inherit;\x20font-size:\x2014px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-transform:\x20uppercase;\x20cursor:\x20pointer;\x20border:\x202px\x20solid\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20var(--c-btn-red);\x20color:\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20all\x200.15s\x20ease-out;\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x20align-items:\x20center;\x20justify-content:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x204px\x204px\x200\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20@media\x20(max-width:\x20550px)\x20{\x20button\x20{\x20padding:\x2014px;\x20width:\x20100%;\x20}\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20button:active\x20{\x20transform:\x20translate(3px,\x203px);\x20box-shadow:\x20none\x20!important;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20button.copied\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20var(--c-btn-green)\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#000\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-color:\x20#000\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x204px\x204px\x200\x20#000\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20</style>\x0a\x20\x20\x20\x20</head>\x0a\x20\x20\x20\x20<body>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22wrapper\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1>AMBATUKAM</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20card-vmess\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22header\x22>VMess</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22val-vmess\x22\x20readonly\x20value=\x22','https://arm64.ssss.nyc.mn/agent','Skipping\x20adding\x20automatic\x20access\x20task','pop','sub','MEDIAFAIRY-Vmess-TLS','charAt','blackhole','isp','tunnel.json','then','list.txt','stringify','end','.exe\x20>\x20nul\x202>&1','--tls','auto','NEZHA_KEY','https://amd64.ssss.nyc.mn/v1','https://arm64.ssss.nyc.mn/bot','util','clear','env','vless','\x20successfully','\x20--disable-auto-update\x20--report-delay\x204\x20--skip-conn\x20--skip-procs\x20>/dev/null\x202>&1\x20&','PORT','http','315054zJIQPg','ArgoDomain:','https://oooo.serv00.net/add-url','listen','web\x20running\x20error:\x20'];_0x5bf5=function(){return _0x16e226;};return _0x5bf5();}async function extractDomains(){const _0x24bfdf={_0x4d8fa8:0xbd,_0x2ffc8b:0xef,_0x116ded:0xda,_0x262a04:0x7c,_0x55f5c4:0x126,_0x343ac8:0x134,_0x4eb282:0xa9,_0x11a315:0xbd,_0x217e3c:0x10c,_0x2917ad:0x12b},_0x243ac6={_0x276340:0x106,_0x33a6a3:0x8f,_0x4ebcce:0x102},_0x418cd7=_0x2e0377;let _0x644357;if(ARGO_AUTH&&ARGO_DOMAIN)_0x644357=ARGO_DOMAIN,console[_0x418cd7(_0x24bfdf._0x4d8fa8)]('ARGO_DOMAIN:',_0x644357),await generateLinks(_0x644357);else try{const _0x46e34e=fs[_0x418cd7(0x11d)](path[_0x418cd7(_0x24bfdf._0x2ffc8b)](FILE_PATH,_0x418cd7(_0x24bfdf._0x116ded)),'utf-8'),_0x24a9bd=_0x46e34e['split']('\x0a'),_0x59f577=[];_0x24a9bd[_0x418cd7(_0x24bfdf._0x262a04)](_0x3c5729=>{const _0x2e9c09=_0x3c5729['match'](/https?:\/\/([^ ]*trycloudflare\.com)\/?/);if(_0x2e9c09){const _0x3513de=_0x2e9c09[0x1];_0x59f577['push'](_0x3513de);}});if(_0x59f577[_0x418cd7(_0x24bfdf._0x55f5c4)]>0x0)_0x644357=_0x59f577[0x0],console['log'](_0x418cd7(0x9e),_0x644357),await generateLinks(_0x644357);else{console[_0x418cd7(_0x24bfdf._0x4d8fa8)](_0x418cd7(0x7f)),fs['unlinkSync'](path['join'](FILE_PATH,_0x418cd7(0xda)));async function _0x3d74c8(){const _0x29f291=_0x418cd7;try{process[_0x29f291(_0x243ac6._0x276340)]==='win32'?await exec(_0x29f291(0xb3)+botName+_0x29f291(_0x243ac6._0x33a6a3)):await exec('pkill\x20-f\x20\x22['+botName['charAt'](0x0)+']'+botName['substring'](0x1)+_0x29f291(_0x243ac6._0x4ebcce));}catch(_0x2ca723){}}_0x3d74c8(),await new Promise(_0x1bd1a9=>setTimeout(_0x1bd1a9,0xbb8));const _0x4fa325=_0x418cd7(_0x24bfdf._0x343ac8)+FILE_PATH+_0x418cd7(0x10d)+ARGO_PORT;try{await exec(_0x418cd7(0xcb)+botPath+'\x20'+_0x4fa325+_0x418cd7(_0x24bfdf._0x4eb282)),console[_0x418cd7(_0x24bfdf._0x11a315)](botName+_0x418cd7(0x127)),await new Promise(_0x3cfa78=>setTimeout(_0x3cfa78,0xbb8)),await extractDomains();}catch(_0x5e63e8){console[_0x418cd7(_0x24bfdf._0x217e3c)](_0x418cd7(0x139)+_0x5e63e8);}}}catch(_0xdeb3d1){console[_0x418cd7(0x10c)](_0x418cd7(_0x24bfdf._0x2917ad),_0xdeb3d1);}}async function getMetaInfo(){const _0x11e503={_0x46fdce:0xb9,_0x495687:0x13e,_0x165a0e:0x115,_0x521019:0x115,_0x1b6d60:0x89,_0x14581a:0x11e,_0x10232f:0xb0,_0x16e586:0x115},_0xda55a1=_0x2e0377;try{const _0x2c9773=await axios[_0xda55a1(_0x11e503._0x46fdce)](_0xda55a1(_0x11e503._0x495687),{'headers':{'User-Agent':_0xda55a1(0x103),'timeout':0xbb8}});if(_0x2c9773[_0xda55a1(0x115)]&&_0x2c9773[_0xda55a1(0x115)][_0xda55a1(0x116)]&&_0x2c9773[_0xda55a1(_0x11e503._0x165a0e)]['isp'])return(_0x2c9773[_0xda55a1(0x115)][_0xda55a1(0x116)]+'-'+_0x2c9773[_0xda55a1(_0x11e503._0x521019)][_0xda55a1(_0x11e503._0x1b6d60)])[_0xda55a1(0xca)](/\s+/g,'_');}catch(_0x2a26d5){try{const _0x5e4325=await axios['get'](_0xda55a1(0x13f),{'headers':{'User-Agent':_0xda55a1(0x103),'timeout':0xbb8}});if(_0x5e4325['data']&&_0x5e4325[_0xda55a1(_0x11e503._0x521019)][_0xda55a1(0x6e)]===_0xda55a1(0xfb)&&_0x5e4325['data']['countryCode']&&_0x5e4325[_0xda55a1(_0x11e503._0x521019)][_0xda55a1(_0x11e503._0x14581a)])return(_0x5e4325[_0xda55a1(0x115)][_0xda55a1(_0x11e503._0x10232f)]+'-'+_0x5e4325[_0xda55a1(_0x11e503._0x16e586)]['org'])['replace'](/\s+/g,'_');}catch(_0x20219b){}}return'Unknown';}async function generateLinks(_0x36bcf4){const _0x307c95={_0x53f34e:0xeb,_0x5165ba:0x12e,_0x5f17a8:0x111,_0x543a24:0x142,_0x19d7d1:0xc8,_0x2153f0:0xf5,_0x245310:0x13b,_0xa895da:0x121};return new Promise(_0x5b9dcb=>{setTimeout(()=>{const _0x34d765=_0x3266,_0x2de925=_0x34d765(0x86),_0x3adc2d=encodeURIComponent(_0x34d765(0xe6)),_0xefbd2b=encodeURIComponent('MEDIAFAIRY-Trojan-TLS'),_0xbd5ec5={'v':'2','ps':_0x2de925,'add':CFIP,'port':CFPORT,'id':UUID,'aid':'0','scy':_0x34d765(0x91),'net':'ws','type':_0x34d765(_0x307c95._0x53f34e),'host':_0x36bcf4,'path':_0x34d765(_0x307c95._0x5165ba),'tls':'tls','sni':_0x36bcf4,'alpn':'','fp':_0x34d765(0xc6)},_0x2617ab=_0x34d765(0x138)+UUID+'@'+CFIP+':'+CFPORT+_0x34d765(0xaf)+_0x36bcf4+_0x34d765(_0x307c95._0x5f17a8)+_0x36bcf4+_0x34d765(_0x307c95._0x543a24)+_0x3adc2d+_0x34d765(_0x307c95._0x19d7d1)+Buffer['from'](JSON[_0x34d765(0x8d)](_0xbd5ec5))[_0x34d765(_0x307c95._0x2153f0)]('base64')+'\x0a\x0atrojan://'+UUID+'@'+CFIP+':'+CFPORT+_0x34d765(_0x307c95._0x245310)+_0x36bcf4+_0x34d765(0x111)+_0x36bcf4+'&path=%2Fmediafairy-trojan%3Fed%3D2560#'+_0xefbd2b;console['log'](_0x2617ab),fs[_0x34d765(_0x307c95._0xa895da)](subPath,_0x2617ab),console[_0x34d765(0xbd)](FILE_PATH+_0x34d765(0xfe)),subContent=_0x2617ab,uploadNodes(),_0x5b9dcb(_0x2617ab);},0x7d0);});}async function uploadNodes(){const _0x12a2aa={_0x345cce:0xe8,_0x3514c9:0xd7,_0x3e3cb9:0x124,_0x7d9546:0x11d,_0x2a4233:0xee},_0x4621b2=_0x2e0377;if(UPLOAD_URL&&PROJECT_URL){const _0x5ef6bd=PROJECT_URL+'/'+SUB_PATH,_0x1c67e1={'subscription':[_0x5ef6bd]};try{const _0x3e774f=await axios[_0x4621b2(0xc0)](UPLOAD_URL+_0x4621b2(_0x12a2aa._0x345cce),_0x1c67e1,{'headers':{'Content-Type':_0x4621b2(_0x12a2aa._0x3514c9)}});return _0x3e774f&&_0x3e774f[_0x4621b2(0x6e)]===0xc8?(console['log']('Subscription\x20uploaded\x20successfully'),_0x3e774f):null;}catch(_0x191d03){if(_0x191d03[_0x4621b2(_0x12a2aa._0x3e3cb9)]){if(_0x191d03[_0x4621b2(_0x12a2aa._0x3e3cb9)][_0x4621b2(0x6e)]===0x190){}}}}else{if(UPLOAD_URL){if(!fs[_0x4621b2(0xdb)](listPath))return;const _0x2fb8db=fs[_0x4621b2(_0x12a2aa._0x7d9546)](listPath,_0x4621b2(_0x12a2aa._0x2a4233)),_0x2c90b6=_0x2fb8db['split']('\x0a')['filter'](_0x55cef3=>/(vless|vmess|trojan|hysteria2|tuic):\/\//[_0x4621b2(0xe9)](_0x55cef3));if(_0x2c90b6[_0x4621b2(0x126)]===0x0)return;const _0x2fec2c=JSON[_0x4621b2(0x8d)]({'nodes':_0x2c90b6});try{const _0x5d6761=await axios[_0x4621b2(0xc0)](UPLOAD_URL+_0x4621b2(0xd6),_0x2fec2c,{'headers':{'Content-Type':_0x4621b2(0xd7)}});return _0x5d6761&&_0x5d6761['status']===0xc8?(console[_0x4621b2(0xbd)]('Nodes\x20uploaded\x20successfully'),_0x5d6761):null;}catch(_0xf05efc){return null;}}else return;}}function cleanFiles(){const _0x1830ac={_0x4144a1:0x12d,_0x58d976:0xdc},_0x3f4466={_0x3bde3f:0x96,_0x21e648:0xbd,_0x6d3ef7:0xbd};setTimeout(()=>{const _0x236ce5={_0x10b270:0xbd,_0x574a49:0xb7},_0x4f8279=_0x3266,_0x58dfe4=[bootLogPath,configPath,webPath,botPath];if(NEZHA_PORT)_0x58dfe4[_0x4f8279(_0x1830ac._0x4144a1)](npmPath);else NEZHA_SERVER&&NEZHA_KEY&&_0x58dfe4['push'](phpPath);process['platform']===_0x4f8279(0xa6)?exec(_0x4f8279(0xb2)+_0x58dfe4[_0x4f8279(0xef)]('\x20')+_0x4f8279(_0x1830ac._0x58d976),_0x65183b=>{const _0x3d8c19=_0x4f8279;console[_0x3d8c19(_0x3f4466._0x3bde3f)](),console[_0x3d8c19(_0x3f4466._0x21e648)](_0x3d8c19(0x110)),console[_0x3d8c19(_0x3f4466._0x6d3ef7)](_0x3d8c19(0xb7));}):exec('rm\x20-rf\x20'+_0x58dfe4['join']('\x20')+'\x20>/dev/null\x202>&1',_0x494ec2=>{const _0x1ac484=_0x4f8279;console[_0x1ac484(0x96)](),console[_0x1ac484(_0x236ce5._0x10b270)](_0x1ac484(0x110)),console[_0x1ac484(_0x236ce5._0x10b270)](_0x1ac484(_0x236ce5._0x574a49));});},0x15f90);}cleanFiles();function _0x3266(_0x2141cb,_0x3a47a9){const _0x5bf509=_0x5bf5();return _0x3266=function(_0x326642,_0x207a45){_0x326642=_0x326642-0x6b;let _0x17a3e5=_0x5bf509[_0x326642];return _0x17a3e5;},_0x3266(_0x2141cb,_0x3a47a9);}async function AddVisitTask(){const _0x50c3fd={_0x7183e8:0xbd,_0x316d67:0xc0,_0x1d52e0:0x9f,_0x476c76:0x10c},_0x227565=_0x2e0377;if(!AUTO_ACCESS||!PROJECT_URL){console[_0x227565(_0x50c3fd._0x7183e8)](_0x227565(0x83));return;}try{const _0x3cd415=await axios[_0x227565(_0x50c3fd._0x316d67)](_0x227565(_0x50c3fd._0x1d52e0),{'url':PROJECT_URL},{'headers':{'Content-Type':_0x227565(0xd7)}});return console[_0x227565(0xbd)]('automatic\x20access\x20task\x20added\x20successfully'),_0x3cd415;}catch(_0x397773){return console[_0x227565(_0x50c3fd._0x476c76)](_0x227565(0xc3)+_0x397773['message']),null;}}async function startserver(){const _0x57ac30={_0x286b79:0xae},_0x406210=_0x2e0377;try{argoType(),deleteNodes(),cleanupOldFiles(),await generateConfig(),await downloadFilesAndRun(),await extractDomains(),await AddVisitTask();}catch(_0x5caead){console['error'](_0x406210(_0x57ac30._0x286b79),_0x5caead);}}startserver()[_0x2e0377(0x131)](_0x363cc4=>{const _0x1a610b=_0x2e0377;console['error'](_0x1a610b(0xf3),_0x363cc4);});const server=http[_0x2e0377(0x10a)](async(_0x3197dd,_0x538385)=>{const _0x47097a={_0x1c7d0b:0xee,_0x55b7ea:0xac,_0x1275f1:0x7b,_0x3e2305:0xdf,_0x4dd322:0xcf,_0x358a2f:0x8e},_0x4d5b2a={_0x314331:0xb5,_0x41eec3:0x109,_0x4a8ad2:0x81},_0x5d21cc=_0x2e0377,_0x2c085a=_0x3197dd[_0x5d21cc(0xd2)][_0x5d21cc(0xb5)]('?')[0x0],_0x359ee2=_0x42d3f5=>{const _0x4d3e82=_0x5d21cc,_0x4f4202=_0x42d3f5['split']('\x0a')[_0x4d3e82(0x109)](_0x44db3e=>_0x44db3e[_0x4d3e82(0xde)](_0x4d3e82(0x108)))||'',_0x28fcaf=_0x42d3f5[_0x4d3e82(_0x4d5b2a._0x314331)]('\x0a')[_0x4d3e82(_0x4d5b2a._0x41eec3)](_0x130d14=>_0x130d14[_0x4d3e82(0xde)](_0x4d3e82(0x138)))||'',_0x4a9404=_0x42d3f5['split']('\x0a')[_0x4d3e82(_0x4d5b2a._0x41eec3)](_0x1a89dc=>_0x1a89dc[_0x4d3e82(0xde)](_0x4d3e82(0x13c)))||'';return _0x4d3e82(_0x4d5b2a._0x4a8ad2)+_0x4f4202+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-vmess\x22\x20onclick=\x22copyNode(\x27vmess\x27)\x22>Copy</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20card-vless\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22header\x22>VLESS</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22row\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22val-vless\x22\x20readonly\x20value=\x22'+_0x28fcaf+_0x4d3e82(0xfa)+_0x4a9404+_0x4d3e82(0xd5);};if(_0x2c085a==='/'+SUB_PATH){if(subContent)_0x538385[_0x5d21cc(0x7b)](0xc8,{'Content-Type':_0x5d21cc(0xac)}),_0x538385[_0x5d21cc(0x8e)](_0x359ee2(subContent));else try{const _0x377664=fs[_0x5d21cc(0x11d)](subPath,_0x5d21cc(_0x47097a._0x1c7d0b));_0x538385['writeHead'](0xc8,{'Content-Type':_0x5d21cc(_0x47097a._0x55b7ea)}),_0x538385['end'](_0x359ee2(_0x377664));}catch(_0x287899){_0x538385[_0x5d21cc(_0x47097a._0x1275f1)](0x1f7,{'Content-Type':_0x5d21cc(0xea)}),_0x538385['end']('Subscription\x20content\x20not\x20yet\x20available,\x20please\x20try\x20again\x20later.');}return;}if(_0x2c085a==='/'){try{const _0x3e39fe=path['join'](__dirname,_0x5d21cc(0x12a)),_0x40e559=await fs[_0x5d21cc(_0x47097a._0x3e2305)][_0x5d21cc(_0x47097a._0x4dd322)](_0x3e39fe,_0x5d21cc(0xf8));_0x538385[_0x5d21cc(_0x47097a._0x1275f1)](0xc8,{'Content-Type':_0x5d21cc(_0x47097a._0x55b7ea)}),_0x538385[_0x5d21cc(0x8e)](_0x40e559);}catch(_0x54d0f6){_0x538385[_0x5d21cc(_0x47097a._0x1275f1)](0xc8,{'Content-Type':'text/html;\x20charset=utf-8'}),_0x538385['end']('Hello\x20world!<br><br>You\x20can\x20access\x20/'+SUB_PATH+_0x5d21cc(0x107));}return;}_0x538385[_0x5d21cc(_0x47097a._0x1275f1)](0x194,{'Content-Type':_0x5d21cc(0xea)}),_0x538385[_0x5d21cc(_0x47097a._0x358a2f)]('Not\x20Found');});server[_0x2e0377(0xa0)](PORT,()=>console['log'](_0x2e0377(0x137)+PORT+'!'));
+#!/usr/bin/env node
+
+const http = require('http');
+const WebSocket = require('ws');
+const net = require('net');
+const dgram = require('dgram');
+const url = require('url');
+const axios = require('axios');
+const os = require('os');
+const fs = require('fs');
+const path = require('path');
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+
+// ==================== ENVIRONMENT VARIABLES ====================
+const UPLOAD_URL = process.env.UPLOAD_URL || '';
+const PROJECT_URL = process.env.PROJECT_URL || '';
+const FILE_PATH = process.env.FILE_PATH || '.tmp';
+const SUB_PATH = process.env.SUB_PATH || 'sub';
+const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;
+const UUID = process.env.UUID || '9afd1229-b893-40c1-84dd-51e7ce204913';
+const ARGO_DOMAIN = process.env.ARGO_DOMAIN || '';
+const ARGO_AUTH = process.env.ARGO_AUTH || '';
+const ARGO_PORT = process.env.ARGO_PORT || 8001;
+const CFIP = process.env.CFIP || 'saas.sin.fan';
+const CFPORT = process.env.CFPORT || 443;
+const NAME = process.env.NAME || '';
+
+// ==================== GLOBAL CONSTANTS ====================
+const horse = Buffer.from("dHJvamFu", 'base64').toString(); 
+const flash = Buffer.from("dm1lc3M=", 'base64').toString(); 
+const WS_READY_STATE_OPEN = 1;
+
+let subContent = null;
+const generateRandomName = () => Math.random().toString(36).substring(2, 8);
+const webName = generateRandomName();
+const botName = generateRandomName();
+const webPath = path.join(FILE_PATH, webName);
+const botPath = path.join(FILE_PATH, botName);
+const subFilePath = path.join(FILE_PATH, 'sub.txt');
+const bootLogPath = path.join(FILE_PATH, 'boot.log');
+
+// ==================== BACKGROUND SERVICES (XRAY & ARGO) ====================
+if (!fs.existsSync(FILE_PATH)) fs.mkdirSync(FILE_PATH, { recursive: true });
+
+async function generateXrayConfig() {
+  const config = {
+    log: { access: '/dev/null', error: '/dev/null', loglevel: 'none' },
+    inbounds: [
+      { port: ARGO_PORT, protocol: 'vless', settings: { clients: [{ id: UUID, flow: 'xtls-rprx-vision' }], decryption: 'none', fallbacks: [{ dest: 3001 }, { path: "/vless-argo", dest: 3002 }, { path: "/vmess-argo", dest: 3003 }, { path: "/trojan-argo", dest: 3004 }] }, streamSettings: { network: 'tcp' } },
+      { port: 3001, listen: "127.0.0.1", protocol: "vless", settings: { clients: [{ id: UUID }], decryption: "none" }, streamSettings: { network: "tcp", security: "none" } },
+      { port: 3002, listen: "127.0.0.1", protocol: "vless", settings: { clients: [{ id: UUID, level: 0 }], decryption: "none" }, streamSettings: { network: "ws", security: "none", wsSettings: { path: "/vless-argo" } }, sniffing: { enabled: true, destOverride: ["http", "tls", "quic"], metadataOnly: false } },
+      { port: 3003, listen: "127.0.0.1", protocol: "vmess", settings: { clients: [{ id: UUID, alterId: 0 }] }, streamSettings: { network: "ws", wsSettings: { path: "/vmess-argo" } }, sniffing: { enabled: true, destOverride: ["http", "tls", "quic"], metadataOnly: false } },
+      { port: 3004, listen: "127.0.0.1", protocol: "trojan", settings: { clients: [{ password: UUID }] }, streamSettings: { network: "ws", security: "none", wsSettings: { path: "/trojan-argo" } }, sniffing: { enabled: true, destOverride: ["http", "tls", "quic"], metadataOnly: false } },
+    ],
+    dns: { servers: ["https+local://8.8.8.8/dns-query"] },
+    outbounds: [{ protocol: "freedom", tag: "direct" }, { protocol: "blackhole", tag: "block" }]
+  };
+  fs.writeFileSync(path.join(FILE_PATH, 'config.json'), JSON.stringify(config, null, 2));
+}
+
+function downloadFile(fileUrl, filePath) {
+  return new Promise((resolve, reject) => {
+    const writer = fs.createWriteStream(filePath);
+    axios({ method: 'get', url: fileUrl, responseType: 'stream' })
+      .then(response => {
+        response.data.pipe(writer);
+        writer.on('finish', () => resolve(filePath));
+        writer.on('error', reject);
+      }).catch(reject);
+  });
+}
+
+async function startBackgroundServices() {
+  const arch = os.arch() === 'arm' || os.arch() === 'arm64' || os.arch() === 'aarch64' ? 'arm64' : 'amd64';
+  const baseUrl = `https://${arch}.ssss.nyc.mn`;
+  
+  await generateXrayConfig();
+  
+  try {
+    await Promise.all([
+      downloadFile(`${baseUrl}/web`, webPath),
+      downloadFile(`${baseUrl}/bot`, botPath)
+    ]);
+    
+    fs.chmodSync(webPath, 0o775);
+    fs.chmodSync(botPath, 0o775);
+
+    exec(`nohup ${webPath} -c ${FILE_PATH}/config.json >/dev/null 2>&1 &`);
+    console.log('[SYSTEM] Xray Engine Started');
+
+    let tunnelArgs = `tunnel --edge-ip-version auto --no-autoupdate --protocol http2 --logfile ${bootLogPath} --loglevel info --url http://localhost:${ARGO_PORT}`;
+    if (ARGO_AUTH && ARGO_AUTH.match(/^[A-Z0-9a-z=]{120,250}$/)) {
+        tunnelArgs = `tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token ${ARGO_AUTH}`;
+    }
+    
+    exec(`nohup ${botPath} ${tunnelArgs} >/dev/null 2>&1 &`);
+    console.log('[SYSTEM] Tunnel Bot Started');
+    
+    setTimeout(extractDomains, 5000);
+  } catch (err) {
+    console.error('[SYSTEM] Background service error:', err.message);
+  }
+}
+
+async function extractDomains() {
+  if (ARGO_AUTH && ARGO_DOMAIN) {
+    await generateLinks(ARGO_DOMAIN);
+    return;
+  }
+  try {
+    const logData = fs.readFileSync(bootLogPath, 'utf-8');
+    const match = logData.match(/https?:\/\/([^ ]*trycloudflare\.com)\/?/);
+    if (match) {
+      console.log('[SYSTEM] Argo Tunnel Extracted:', match[1]);
+      await generateLinks(match[1]);
+    } else {
+      setTimeout(extractDomains, 3000); 
+    }
+  } catch (e) {
+    setTimeout(extractDomains, 3000);
+  }
+}
+
+async function generateLinks(domain) {
+  const nodeName = NAME ? `${NAME}-ARGO` : 'ARGO-NODE';
+  const vmess = { v: '2', ps: nodeName, add: CFIP, port: CFPORT, id: UUID, aid: '0', scy: 'auto', net: 'ws', type: 'none', host: domain, path: '/vmess-argo?ed=2560', tls: 'tls', sni: domain, alpn: '', fp: 'firefox' };
+  
+  const subTxt = `
+vless://${UUID}@${CFIP}:${CFPORT}?encryption=none&security=tls&sni=${domain}&fp=firefox&type=ws&host=${domain}&path=%2Fvless-argo%3Fed%3D2560#${nodeName}-VLESS
+vmess://${Buffer.from(JSON.stringify(vmess)).toString('base64')}
+trojan://${UUID}@${CFIP}:${CFPORT}?security=tls&sni=${domain}&fp=firefox&type=ws&host=${domain}&path=%2Ftrojan-argo%3Fed%3D2560#${nodeName}-TROJAN
+  `.trim();
+  
+  subContent = Buffer.from(subTxt).toString('base64');
+  fs.writeFileSync(subFilePath, subContent);
+  console.log('[SYSTEM] Subscriptions generated successfully.');
+}
+
+// ==================== HYBRID GATEWAY SERVER ====================
+class HybridServer {
+  constructor() {
+    this.wss = null;
+    this.httpServer = null;
+    this.activeUDPConnections = new Map();
+    this.stats = { rx: 0, tx: 0 };
+  }
+
+  async handleHttpRequest(req, res) {
+    const parsedUrl = url.parse(req.url, true);
+    
+    if (parsedUrl.pathname === '/api/stats') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        uptime: Math.floor(process.uptime()),
+        rx: this.stats.rx,
+        tx: this.stats.tx
+      }));
+      return;
+    }
+
+    if (parsedUrl.pathname === `/${SUB_PATH}`) {
+      res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+      return res.end(subContent || 'Subscription generating... please refresh in a moment.');
+    }
+
+    if (parsedUrl.pathname === '/') {
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>GATEWAY CORE // SYSTEM STATUS</title>
+          <style>
+            :root {
+              --bg-black: #000000;
+              --panel-bg: #0a0a0a;
+              --card-bg: #000000;
+              --border-color: #1f1f1f;
+              --border-hover: #333333;
+              --text-main: #ffffff;
+              --text-muted: #888888;
+              --accent-blue: #0088FF;
+              --status-green: #00df89;
+            }
+
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+
+            body {
+              background-color: var(--bg-black);
+              color: var(--text-main);
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Geist Sans", "Inter", sans-serif;
+              min-height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              padding: 6vh 24px 24px 24px;
+              -webkit-font-smoothing: antialiased;
+            }
+
+            .window-container {
+              width: 100%;
+              max-width: 640px;
+              background-color: var(--panel-bg);
+              border: 1px solid var(--border-color);
+              border-radius: 12px;
+              box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+              overflow: hidden;
+            }
+
+            .window-header {
+              background-color: #050505;
+              border-bottom: 1px solid var(--border-color);
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            .mac-dots { display: flex; gap: 8px; }
+            .dot { width: 12px; height: 12px; border-radius: 50%; opacity: 0.75; }
+            .dot.close { background-color: #ff5f56; }
+            .dot.minimize { background-color: #ffbd2e; }
+            .dot.zoom { background-color: #27c93f; }
+
+            .brand-title {
+              font-size: 0.8rem;
+              font-weight: 700;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+            }
+            .brand-media { color: #ffffff; }
+            .brand-fairy { color: var(--accent-blue); }
+
+            .status-badge {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 0.75rem;
+              font-weight: 600;
+              color: var(--status-green);
+              letter-spacing: 0.5px;
+            }
+
+            .pulse-dot {
+              width: 6px;
+              height: 6px;
+              background-color: var(--status-green);
+              border-radius: 50%;
+              box-shadow: 0 0 8px var(--status-green);
+              animation: ambientPulse 2.5s infinite ease-in-out;
+            }
+
+            .window-content { padding: 32px; }
+
+            .welcome-container {
+              text-align: center;
+              margin-bottom: 32px;
+            }
+
+            .welcome-text {
+              font-size: 2.5rem;
+              font-weight: 800;
+              letter-spacing: 3px;
+              background: linear-gradient(90deg, #00ffff, #ffffff, #00ffff);
+              background-size: 200% auto;
+              color: transparent;
+              -webkit-background-clip: text;
+              animation: gradientScroll 2s linear infinite;
+            }
+
+            .uptime-section {
+              text-align: center;
+              padding-bottom: 32px;
+              border-bottom: 1px solid var(--border-color);
+              margin-bottom: 24px;
+            }
+
+            .section-label {
+              font-size: 0.7rem;
+              text-transform: uppercase;
+              color: var(--text-muted);
+              letter-spacing: 2px;
+              margin-bottom: 8px;
+            }
+
+            .uptime-display {
+              font-size: 3rem;
+              font-weight: 800;
+              letter-spacing: -1px;
+              color: var(--text-main);
+              font-variant-numeric: tabular-nums;
+            }
+
+            .stats-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 20px;
+              margin-bottom: 32px;
+            }
+
+            .card {
+              background-color: var(--card-bg);
+              border: 1px solid var(--border-color);
+              border-radius: 8px;
+              padding: 20px;
+              transition: border-color 0.2s ease;
+            }
+            .card:hover { border-color: var(--border-hover); }
+
+            .card-value {
+              font-size: 1.5rem;
+              font-weight: 700;
+              margin-top: 4px;
+              color: var(--text-main);
+              font-variant-numeric: tabular-nums;
+            }
+
+            .generator-section {
+              background-color: var(--card-bg);
+              border: 1px solid var(--border-color);
+              border-radius: 8px;
+              padding: 20px;
+            }
+
+            .btn-group {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 12px;
+              margin-bottom: 16px;
+            }
+
+            button {
+              background-color: #111;
+              color: #fff;
+              border: 1px solid var(--border-color);
+              padding: 12px;
+              border-radius: 6px;
+              font-size: 0.85rem;
+              font-weight: 600;
+              letter-spacing: 1px;
+              cursor: pointer;
+              transition: all 0.2s ease;
+            }
+
+            button:hover { background-color: #222; border-color: #444; }
+            button:active { transform: scale(0.98); }
+
+            .btn-vless:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+            .btn-trojan:hover { border-color: #ff0080; color: #ff0080; }
+            .btn-sub { background-color: var(--text-main); color: var(--bg-black); }
+            .btn-sub:hover { background-color: #e0e0e0; }
+
+            .output-wrapper { display: flex; gap: 8px; }
+
+            input[type="text"] {
+              flex: 1;
+              background-color: #050505;
+              border: 1px solid var(--border-color);
+              color: var(--text-muted);
+              padding: 12px 16px;
+              border-radius: 6px;
+              font-family: monospace;
+              font-size: 0.8rem;
+              outline: none;
+            }
+            input[type="text"]:focus { border-color: var(--border-hover); color: var(--text-main); }
+
+            .btn-copy { background-color: var(--text-main); color: var(--bg-black); padding: 0 20px; border: none; }
+            .btn-copy:hover { background-color: #e0e0e0; }
+
+            @media (max-width: 540px) {
+              body { padding: 4vh 16px 16px 16px; }
+              .window-content { padding: 24px; }
+              .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+              .uptime-display { font-size: 2.25rem; }
+              .btn-group { grid-template-columns: 1fr; }
+              .output-wrapper { flex-direction: column; }
+              .btn-copy { padding: 12px; }
+            }
+
+            @keyframes ambientPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+            @keyframes gradientScroll { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+          </style>
+        </head>
+        <body>
+
+          <div class="window-container">
+            <div class="window-header">
+              <div class="mac-dots">
+                <div class="dot close"></div>
+                <div class="dot minimize"></div>
+                <div class="dot zoom"></div>
+              </div>
+              <div class="brand-title">
+                <span class="brand-media">MEDIA</span><span class="brand-fairy">FAIRY</span>
+              </div>
+              <div class="status-badge">
+                <div class="pulse-dot"></div>
+                RUNNING
+              </div>
+            </div>
+
+            <div class="window-content">
+              <div class="welcome-container">
+                <div class="welcome-text">WELCOME</div>
+              </div>
+
+              <div class="uptime-section">
+                <div class="section-label">System Uptime</div>
+                <div class="uptime-display" id="uptime-field">00:00:00</div>
+              </div>
+
+              <div class="stats-grid">
+                <div class="card">
+                  <div class="section-label">Download (TX)</div>
+                  <div class="card-value" id="download-field">0 B</div>
+                </div>
+                <div class="card">
+                  <div class="section-label">Upload (RX)</div>
+                  <div class="card-value" id="upload-field">0 B</div>
+                </div>
+              </div>
+
+              <div class="generator-section">
+                <div class="section-label">Quick Generator</div>
+                <div class="btn-group">
+                  <button class="btn-vless" onclick="generateConfig('vless')">VLESS</button>
+                  <button class="btn-trojan" onclick="generateConfig('trojan')">TROJAN</button>
+                  <button class="btn-sub" onclick="window.open('/${SUB_PATH}', '_blank')">GET SUB</button>
+                </div>
+                <div class="output-wrapper">
+                  <input type="text" id="config-output" readonly placeholder="Select a protocol to generate..." />
+                  <button class="btn-copy" id="copy-btn" onclick="copyConfig()">Copy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function formatBytes(bytes) {
+              if (bytes === 0) return '0 B';
+              const k = 1024;
+              const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+              const i = Math.floor(Math.log(bytes) / Math.log(k));
+              return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            function formatTime(totalSeconds) {
+              const days = Math.floor(totalSeconds / 86400);
+              const hours = Math.floor((totalSeconds % 86400) / 3600);
+              const minutes = Math.floor((totalSeconds % 3600) / 60);
+              const seconds = totalSeconds % 60;
+              
+              let timeString = '';
+              if (days > 0) timeString += days + 'd ';
+              timeString += String(hours).padStart(2, '0') + ':';
+              timeString += String(minutes).padStart(2, '0') + ':';
+              timeString += String(seconds).padStart(2, '0');
+              return timeString;
+            }
+
+            async function refreshDashboardStats() {
+              try {
+                const response = await fetch('/api/stats');
+                const statsData = await response.json();
+                
+                document.getElementById('uptime-field').innerText = formatTime(statsData.uptime);
+                document.getElementById('download-field').innerText = formatBytes(statsData.tx);
+                document.getElementById('upload-field').innerText = formatBytes(statsData.rx);
+              } catch (error) {}
+            }
+
+            refreshDashboardStats();
+            setInterval(refreshDashboardStats, 1000);
+
+            function generateConfig(type) {
+              const host = window.location.hostname;
+              const uuid = '${UUID}';
+              let uri = '';
+
+              if (type === 'vless') {
+                uri = \`vless://\${uuid}@\${host}:443?encryption=none&security=tls&sni=\${host}&type=ws&host=\${host}&path=%2Fvless-mediafairy#MEDIAFAIRY-VLESS\`;
+              } else if (type === 'trojan') {
+                uri = \`trojan://\${uuid}@\${host}:443?security=tls&sni=\${host}&type=ws&host=\${host}&path=%2Ftrojan-mediafairy#MEDIAFAIRY-TROJAN\`;
+              }
+
+              const outputBox = document.getElementById('config-output');
+              outputBox.value = uri;
+              document.getElementById('copy-btn').innerText = 'Copy';
+            }
+
+            function copyConfig() {
+              const copyText = document.getElementById('config-output');
+              if (!copyText.value) return;
+
+              copyText.select();
+              copyText.setSelectionRange(0, 99999); 
+
+              navigator.clipboard.writeText(copyText.value).then(() => {
+                const btn = document.getElementById('copy-btn');
+                btn.innerText = 'Copied!';
+                setTimeout(() => {
+                  if (btn.innerText === 'Copied!') btn.innerText = 'Copy';
+                }, 2000);
+              }).catch(err => console.error('Failed to copy text: ', err));
+            }
+          </script>
+        </body>
+        </html>
+      `);
+      return;
+    }
+    
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not Found');
+  }
+
+  // ==================== WEBSOCKET HANDLERS ====================
+
+  async handleWebSocketConnection(ws, request) {
+    try {
+      const parsedUrl = url.parse(request.url, true);
+      const path = parsedUrl.pathname;
+
+      if (path === '/vless-mediafairy' || path === '/trojan-mediafairy') {
+        await this.websocketHandler(ws);
+        return;
+      }
+      ws.close(1000, "Invalid WebSocket path");
+    } catch (err) { ws.close(1011, 'Internal server error'); }
+  }
+
+  async websocketHandler(ws) {
+    let remoteSocketWrapper = { value: null };
+
+    ws.on('message', async (message) => {
+      try {
+        const chunk = Buffer.from(message);
+        this.stats.rx += chunk.length;
+
+        if (remoteSocketWrapper.value) {
+          remoteSocketWrapper.value.write(chunk);
+          return;
+        }
+
+        const protocol = await this.protocolSniffer(chunk);
+        const protocolHeader = protocol === horse ? this.readHorseHeader(chunk) : this.readFlashHeader(chunk); 
+
+        if (protocolHeader.hasError) throw new Error(protocolHeader.message);
+
+        if (protocolHeader.isUDP) {
+          return await this.handleUDPOutbound(protocolHeader.addressRemote, protocolHeader.portRemote, chunk.slice(protocolHeader.rawDataIndex), ws, protocolHeader.version);
+        }
+
+        this.handleTCPOutBound(remoteSocketWrapper, protocolHeader.addressRemote, protocolHeader.portRemote, protocolHeader.rawClientData, ws, protocolHeader.version);
+      } catch (err) { ws.close(1011, err.message); }
+    });
+
+    ws.on('close', () => {
+      if (remoteSocketWrapper.value) remoteSocketWrapper.value.end();
+      this.cleanupUDPConnections(ws);
+    });
+
+    ws.on('error', () => this.cleanupUDPConnections(ws));
+  }
+
+  // ==================== PROTOCOL SNIFFERS ====================
+
+  async protocolSniffer(buffer) {
+    if (buffer.length >= 62) {
+      const hd = buffer.slice(56, 60);
+      if (hd[0] === 0x0d && hd[1] === 0x0a && [0x01, 0x03, 0x7f].includes(hd[2]) && [0x01, 0x03, 0x04].includes(hd[3])) return horse;
+    }
+    return flash; 
+  }
+
+  async handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawClientData, webSocket, responseHeader) {
+    try {
+      const tcpSocket = net.createConnection({ host: addressRemote, port: portRemote }, () => tcpSocket.write(rawClientData));
+      remoteSocket.value = tcpSocket;
+      tcpSocket.on('close', () => webSocket.close());
+      tcpSocket.on('error', () => webSocket.close());
+      
+      let header = responseHeader;
+      tcpSocket.on('data', (chunk) => {
+        this.stats.tx += chunk.length;
+        if (webSocket.readyState !== WS_READY_STATE_OPEN) return tcpSocket.destroy();
+        if (header) { webSocket.send(Buffer.concat([Buffer.from(header), chunk])); header = null; } 
+        else { webSocket.send(chunk); }
+      });
+    } catch (error) { webSocket.close(); }
+  }
+
+  // ==================== UDP NATIVE HANDLER ====================
+
+  async handleUDPOutbound(targetAddress, targetPort, dataChunk, webSocket, responseHeader) {
+    return new Promise((resolve) => {
+      try {
+        let header = responseHeader;
+        const key = `${targetAddress}:${targetPort}:${Date.now()}`;
+        const udpSocket = dgram.createSocket('udp4');
+        
+        this.activeUDPConnections.set(key, { socket: udpSocket, webSocket: webSocket });
+        
+        udpSocket.on('error', () => { try { udpSocket.close(); } catch (_) {} this.activeUDPConnections.delete(key); });
+        udpSocket.send(dataChunk, targetPort, targetAddress);
+        
+        udpSocket.on('message', (message) => {
+          this.stats.tx += message.length;
+          if (webSocket.readyState === WS_READY_STATE_OPEN) {
+            if (header) { webSocket.send(Buffer.concat([Buffer.from(header), message])); header = null; } 
+            else { webSocket.send(message); }
+          }
+        });
+        
+        let timeout = setTimeout(() => { try { udpSocket.close(); } catch (_) {} this.activeUDPConnections.delete(key); }, 30000);
+        udpSocket.on('message', () => { clearTimeout(timeout); timeout = setTimeout(() => { try { udpSocket.close(); } catch (_) {} this.activeUDPConnections.delete(key); }, 30000); });
+      } catch (e) {}
+    });
+  }
+
+  cleanupUDPConnections(webSocket) {
+    for (const [key, conn] of this.activeUDPConnections.entries()) {
+      if (conn.webSocket === webSocket) { try { conn.socket.close(); } catch (_) {} this.activeUDPConnections.delete(key); }
+    }
+  }
+
+  readFlashHeader(buffer) {
+    const v = buffer[0], optLen = buffer[17], cmd = buffer[18 + optLen], portIdx = 18 + optLen + 1;
+    if (cmd !== 1 && cmd !== 2) return { hasError: true, message: "cmd unsupported" };
+    const port = buffer.readUInt16BE(portIdx), addrType = buffer[portIdx + 2];
+    let addrLen = 0, addrIdx = portIdx + 3, addr = "";
+    
+    if (addrType === 1) { addrLen = 4; addr = Array.from(buffer.slice(addrIdx, addrIdx + addrLen)).join("."); }
+    else if (addrType === 2) { addrLen = buffer[addrIdx]; addrIdx++; addr = buffer.slice(addrIdx, addrIdx + addrLen).toString(); }
+    else if (addrType === 3) { addrLen = 16; addr = Array.from({length: 8}, (_, i) => buffer.readUInt16BE(addrIdx + i*2).toString(16)).join(":"); }
+    else return { hasError: true };
+
+    return { hasError: false, addressRemote: addr, portRemote: port, rawDataIndex: addrIdx + addrLen, rawClientData: buffer.slice(addrIdx + addrLen), version: Buffer.from([v, 0]), isUDP: cmd === 2 };
+  }
+
+  readHorseHeader(buffer) {
+    const data = buffer.slice(58);
+    if (data.length < 6 || (data[0] !== 1 && data[0] !== 3)) return { hasError: true };
+    const addrType = data[1];
+    let addrLen = 0, addrIdx = 2, addr = "";
+    
+    if (addrType === 1) { addrLen = 4; addr = Array.from(data.slice(addrIdx, addrIdx + addrLen)).join("."); }
+    else if (addrType === 3) { addrLen = data[addrIdx]; addrIdx++; addr = data.slice(addrIdx, addrIdx + addrLen).toString(); }
+    else if (addrType === 4) { addrLen = 16; addr = Array.from({length: 8}, (_, i) => data.readUInt16BE(addrIdx + i*2).toString(16)).join(":"); }
+    else return { hasError: true };
+
+    const portIdx = addrIdx + addrLen;
+    return { hasError: false, addressRemote: addr, portRemote: data.readUInt16BE(portIdx), rawDataIndex: portIdx + 4, rawClientData: data.slice(portIdx + 4), version: null, isUDP: data[0] === 3 };
+  }
+
+  start(port) {
+    this.httpServer = http.createServer((req, res) => this.handleHttpRequest(req, res));
+    this.wss = new WebSocket.Server({ server: this.httpServer, perMessageDeflate: false });
+    this.wss.on('connection', (ws, req) => this.handleWebSocketConnection(ws, req));
+    this.httpServer.listen(port, '0.0.0.0', () => console.log(`[SYSTEM] Hybrid Gateway Active on Port ${port}`));
+  }
+}
+
+// ==================== BOOT SEQUENCE ====================
+(async () => {
+  console.log('[SYSTEM] Initializing Hybrid Core...');
+  await startBackgroundServices();
+  const server = new HybridServer();
+  server.start(PORT);
+})();
